@@ -1,58 +1,59 @@
 # Tarea 4 · Calculadora y bucles
 
-**Autor:** [Tu nombre y apellidos] · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
+**Autor:** Daniel Martinez Ferreras · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27  
+**Fecha:** 21/10/2026
 
-> **Plantilla de la tarea 4.** Cómo usarla:
->
-> 1. Copia esta carpeta en tu repositorio de DWEC y cámbiale el nombre a `tema04`.
-> 2. `index.html` trae lo imprescindible para empezar: las dos casillas, la zona de resultado y el botón «Sumar». El resto de la página y su maquetación con Bootstrap los haces tú.
-> 3. `js/app.js` trae `sumar()` hecha como modelo y las demás funciones con `TODO`.
-> 4. `js/ayudas.js` no se toca: son las funciones que leen las casillas y escriben el resultado.
-> 5. Sustituye las imágenes de `capturas/` por las tuyas, **con el mismo nombre**.
-> 6. Todo lo que va entre [corchetes] es un hueco: cámbialo por lo tuyo. Al terminar, borra este aviso.
+En esta carpeta se encuentra la tarea del tema 4, dedicada a los operadores y los bucles de JavaScript. La página está maquetada con Bootstrap y permite realizar operaciones matemáticas, comparar números y probar los bucles `for`, `while` y `do...while`.
 
-[Una o dos líneas: qué hay en esta carpeta y cómo se ve. Por ejemplo: abrir la carpeta en VS Code, pulsar **Go Live**, escribir dos números y pulsar los botones con la consola abierta (F12).]
+Para utilizarla, abre `index.html` en el navegador, introduce los números y pulsa los botones. Puedes abrir las herramientas de desarrollo con **F12** para consultar los mensajes de la consola.
 
 ## Capturas
 
 ### a) La página entera
 
-<img src="capturas/a-pagina.png" alt="La página entera con mi nombre en la navbar" width="600">
+![Página completa con mi nombre](capturas/a-pagina.png)
 
-[Qué se ve: tu nombre en la navbar y cómo has repartido las cards con la rejilla.]
+Se muestra la página completa, con mi nombre en la barra de navegación y las tarjetas organizadas mediante la rejilla de Bootstrap.
 
 ### b) La página en el móvil
 
-<img src="capturas/b-movil.png" alt="La página en el modo móvil de las herramientas de desarrollo" width="300">
+![Página en modo móvil](capturas/b-movil.png)
 
-[Qué cambia respecto a la pantalla grande.]
+Se muestra la adaptación de la página a una pantalla pequeña, con las tarjetas colocadas una debajo de otra.
 
 ### c) El error de dividir entre 0
 
-![El error de dividir entre 0 con la consola abierta](capturas/c-dividir-cero.png)
+![Error de división entre cero](capturas/c-dividir-cero.png)
 
-[Qué se ve en la página y en la consola.]
+Se muestra el mensaje de error al intentar dividir entre cero y el aviso correspondiente en la consola.
 
 ### d) Los tres bucles con el número 0
 
-![Los tres bucles de texto con el número 0 y la consola abierta](capturas/d-bucles-cero.png)
+![Bucles de texto con cero](capturas/d-bucles-cero.png)
 
-[Cuántas veces se repite cada bucle y por qué.]
+Los bucles `for` y `while` no realizan ninguna repetición con cero. El bucle `do...while` se ejecuta una vez porque comprueba la condición después de ejecutar su bloque.
 
 ### e) Un bucle con badges
 
-![Un bucle con badges](capturas/e-badges.png)
+![Bucle con badges](capturas/e-badges.png)
 
-[Qué número has puesto y cómo eliges el color de cada badge.]
+Se muestran los números de las repeticiones mediante badges de Bootstrap. El operador ternario permite elegir un color para los números pares y otro para los impares.
 
 ## Reflexión
 
-[De 5 a 8 líneas: ¿en qué se diferencian for, while y do…while y cuándo usarías cada uno? Pon como ejemplo lo que pasó con el 0.]
+El bucle `for` es útil cuando sabemos cuántas veces queremos repetir una acción.  
+El bucle `while` repite el bloque mientras se cumpla una condición.  
+El bucle `do...while` ejecuta primero el bloque y comprueba la condición después.  
+Por eso, con el número 0, `for` y `while` no realizan ninguna repetición.  
+En cambio, `do...while` ejecuta el bloque una vez, aunque la condición sea falsa después.  
+Usaría `for` para contar repeticiones, `while` para condiciones que pueden cambiar y `do...while` cuando necesite ejecutar una acción al menos una vez.
 
 ## Fuentes
 
-- [Título de la página](https://enlace-a-la-fuente)
+- [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/)
+- [MDN: Operadores de JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Expressions_and_operators)
+- [MDN: Sentencias de iteración](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration)
 
 ## Uso de IA
 
-[Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
+He utilizado herramientas de inteligencia artificial muy poco, solamente para resolver algunas dudas puntuales y orientarme en algunos momentos de la tarea. Después he revisado el código y comprobado su funcionamiento.
