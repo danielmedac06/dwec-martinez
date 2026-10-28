@@ -213,12 +213,29 @@ function borrarCompletadas() {
 
 function verDatosVentana() {
 
-
   const ancho = window.innerWidth;
   const alto = window.innerHeight;
   document.querySelector("#datoVentana").textContent = `${ancho} × ${alto} px`;
 
+  let punto;
 
+  if (ancho >= 1400) {
+    punto = "XXL (≥ 1400 px)";
+  } else if (ancho >= 1200) {
+    punto = "XL (≥ 1200 px)";
+  } else if (ancho >= 992) {
+    punto = "LG (≥ 992 px)";
+  } else if (ancho >= 768) {
+    punto = "MD (≥ 768 px)";
+  } else if (ancho >= 576) {
+    punto = "SM (≥ 576 px)";
+  } else {
+    punto = "XS (< 576 px)";
+  }
+
+  document.querySelector("#datoPunto").textContent = punto;
+  
+  }
 
 
 
