@@ -3,8 +3,9 @@ console.log("app.js cargado");
 function aplicarCambios() {
   const primero = document.getElementById("primero");
   primero.textContent = "Texto modificado por JavaScript";
-
+  const segundo = document.querySelector("#contenido p");
   
+
 }
 
 
