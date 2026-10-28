@@ -52,15 +52,6 @@ He consultado el tamaño de la ventana, el punto de corte de Bootstrap, el tama�
 
 La propiedad `textContent` permite introducir texto sin interpretar las etiquetas HTML. En cambio, `innerHTML` interpreta el contenido como HTML y permite mostrar elementos como el texto en negrita. Por ejemplo, al introducir `<b>hola</b>`, con `textContent` se ven las etiquetas, mientras que con `innerHTML` aparece «hola» en negrita. No es recomendable introducir directamente en `innerHTML` contenido escrito por los usuarios, porque podría contener código HTML malicioso. Para mostrar texto introducido por el usuario de forma segura, es preferible utilizar `textContent`.
 
-## Fuentes
-
-- Material de clase: **Tema 5. Los objetos de lenguaje — Tarea 5. Manipular el DOM**.
-- [MDN: Document.querySelector()](https://developer.mozilla.org/es/docs/Web/API/Document/querySelector)
-- [MDN: Node.textContent](https://developer.mozilla.org/es/docs/Web/API/Node/textContent)
-- [MDN: Element.innerHTML](https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML)
-- [MDN: EventTarget.addEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)
-- [Bootstrap 5.3: Documentación](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
-
 ## Uso de IA
 He usado la IA para entender algunos conceptos de las tareas del app.js y poder correguir algunos errores que he tenido en la actividad 4 y 5.
 La IA me ha ayudado ha hacer el README.md. He usado de IA de apoyo (ChatGPT).
