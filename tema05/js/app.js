@@ -158,6 +158,19 @@ casilla.setAttribute("aria-label", `Completar tarea: ${texto}`);
 const contenido = document.createElement("span");
 contenido.textContent = texto;
 
+casilla.addEventListener("change", function () {
+    contenido.classList.toggle(
+      "text-decoration-line-through",
+      casilla.checked
+    );
+
+    contenido.classList.toggle("text-body-secondary", casilla.checked);
+
+    console.log(
+      casilla.checked ? "Tarea completada." : "Tarea pendiente."
+  );
+});
+
 }
 
 function borrarCompletadas() {
