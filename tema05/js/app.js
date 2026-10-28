@@ -94,12 +94,22 @@ const primero = document.querySelector("#contenido p");
 
 if (texto ==="") {
   error.textContent = "El campo está vacío.";
+  error.classList.remove("d-none");
+  return;
 }
 
+if (primero === null){
+  error.textContent = "No hay ningún párrafo que modificar.";
+  return;
+}
 
+primero.textConten = texto;
+
+error.classList.add("d-none");
 }
 
 function cambiarConHtml() {
+  
 
 
 
