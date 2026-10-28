@@ -92,6 +92,9 @@ const texto = entrada.ariaValueMax.trim();
 const error = document.querySelector("#error4");
 const primero = document.querySelector("#contenido p");
 
+if (texto ==="") {
+  error.textContent = "El campo está vacío.";
+}
 
 
 }
