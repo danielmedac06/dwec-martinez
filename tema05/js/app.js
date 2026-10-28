@@ -238,10 +238,7 @@ function verDatosVentana() {
   document.querySelector("#datoPantalla").textContent =     `${screen.width} × ${screen.height} px`;
   document.querySelector("#datoUrl").textContent = location.href;
   document.querySelector("#datoIdioma").textContent = navigator.language;
-  
+
+  console.log("Se han mostrado los datos de la ventana.");
   }
 
-
-
-
-}
