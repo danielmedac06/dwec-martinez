@@ -147,6 +147,14 @@ if (texto === ""){
   return;
 }
 
+const elemento = document.createElement("li");
+elemento.classList.add("list-group-item");
+
+const casilla = document.createElement("input");
+casilla.type = "checkbox";
+casilla.classList.add("form-check-input", "me-2");
+casilla.setAttribute("aria-label", `Completar tarea: ${texto}`);
+
 }
 
 function borrarCompletadas() {
