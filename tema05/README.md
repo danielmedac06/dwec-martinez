@@ -55,4 +55,3 @@ La propiedad `textContent` permite introducir texto sin interpretar las etiqueta
 ## Uso de IA
 He usado la IA para entender algunos conceptos de las tareas del app.js y poder correguir algunos errores que he tenido en la actividad 4 y 5.
 La IA me ha ayudado ha hacer el README.md. He usado de IA de apoyo (ChatGPT).
-
