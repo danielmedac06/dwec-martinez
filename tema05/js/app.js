@@ -106,11 +106,18 @@ if (primero === null){
 primero.textConten = texto;
 
 error.classList.add("d-none");
+console.log("Texto del primer párrafo actualizado.");
 }
 
 function cambiarConHtml() {
-  
+  const entrada = document.querySelector("#nuevoTexto");
+  const texto = entrada.value.trim();
+  const error = document.querySelector("#error");
+  const primero = document.querySelector("#contenido p");
 
+  if (texto ==="") {
+    
+  }
 
 
 
