@@ -128,7 +128,10 @@ function cambiarConHtml() {
   console.log("Primer párrafo actualizado utilizando innerHTML.");
 }
 
-
+function actualizarTotalTareas() {
+  const tareas = document.querySelectorAll("#listaTareas li");
+  document.querySelector("#totalTareas").textContent = tareas.length;
+}
 
 
 function anadirTarea() {
