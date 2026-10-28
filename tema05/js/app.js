@@ -116,11 +116,16 @@ function cambiarConHtml() {
   const primero = document.querySelector("#contenido p");
 
   if (texto ==="") {
-    
+    error.textContent ="El campo está vacío.";
+    error.classList.remove("d-none");
+    return;
   }
 
+  primero.innerHTML = texto;
 
+  error.classList.add("d-none");
 
+  console.log("Primer párrafo actualizado utilizando innerHTML.");
 }
 
 
