@@ -23,7 +23,8 @@ function aplicarCambios() {
 
 
 function anadirParrafo() {
-  
+  const contenido = document.querySelector("#contenido");
+  const parrafo = document.createElement("p");
 
 
 }
