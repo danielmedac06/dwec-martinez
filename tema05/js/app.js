@@ -234,6 +234,10 @@ function verDatosVentana() {
   }
 
   document.querySelector("#datoPunto").textContent = punto;
+
+  document.querySelector("#datoPantalla").textContent =     `${screen.width} × ${screen.height} px`;
+  document.querySelector("#datoUrl").textContent = location.href;
+  document.querySelector("#datoIdioma").textContent = navigator.language;
   
   }
 
