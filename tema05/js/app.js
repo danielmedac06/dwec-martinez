@@ -48,14 +48,14 @@ function eliminarUltimo() {
   } else{
     ultimo.remove();
     console.log("Se ha eliminado el último párrafo");
-    
 
+    if (contenido.children.length === 0){
+      aviso.classList.remove("d-none");
+    } else {
+      aviso.classList.add("d-none");
+    }
   }
-
-
 }
-
-
 
 
 function activarResaltado() {
