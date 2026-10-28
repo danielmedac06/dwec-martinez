@@ -60,18 +60,32 @@ function eliminarUltimo() {
 
 function activarResaltado() {
   const parrafos = document.querySelectorAll("#contenido p");
+  let activados = 0;
 
   for (const parrafo of parrafos) {
-   
+   if (parrafo.CDATA_SECTION_NODE.resaltado === "true"){
+    continue;
+   }
 
 
     parrafo.addEventListener("mouseenter", function () {
       parrafo.classList.add("bg-body-secondary");
     });
 
+    parrafo.addEventListener("mouseenter", function () {
+      parrafo.classList.remove("bg-body-secondary");
+    });
+
+    parrafo.dataset.resaltado = "true";
+    activados++;
   }
+  
+  console.log(
+    `Resaltado activado en ${activados} párrafo(s) nuevo(s).`
+  );
 
 }
+
 
 
 
