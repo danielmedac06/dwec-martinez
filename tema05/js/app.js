@@ -10,7 +10,12 @@ function aplicarCambios() {
     primero.textContent = "Texto modificado por JavaScript";
   }
 
+  if (segundo !== null) {
+    segundo.classList.add("bg-warning-subtle");
+  }
+
   
+
 }
 
 
