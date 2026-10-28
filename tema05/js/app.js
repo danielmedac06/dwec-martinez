@@ -185,8 +185,16 @@ console.log("Tarea añadida:", texto);
 }
 
 function borrarCompletadas() {
+  const casillas = document.querySelectorAll(
+    "#listaTareas input:checked"
+  );
+  const error = document.querySelector("#error5");
 
+  if (casillas.length === 0) {
+    error.textContent = "No hay tareas completadas para borrar.";
+    error.classList.remove("d-none");
 
+  }
 
 
 }
