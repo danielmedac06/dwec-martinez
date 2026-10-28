@@ -14,8 +14,11 @@ function aplicarCambios() {
     segundo.classList.add("bg-warning-subtle");
   }
 
-  
+  if (parrafos.length >= 3){
+    parrafos[2].classList.add("text-danger");
+  }
 
+  console.log("Se han aplicado los cambios");
 }
 
 
