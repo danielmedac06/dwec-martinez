@@ -86,37 +86,34 @@ function activarResaltado() {
 
 }
 
+
 function cambiarTexto() {
-const entrada = document.querySelector("#nuevoTexto");
-const texto = entrada.ariaValueMax.trim();
-const error = document.querySelector("#error4");
-const primero = document.querySelector("#contenido p");
+  const entrada = document.querySelector("#nuevoTexto");
+  const texto = entrada.value.trim();
+  const error = document.querySelector("#error4");
+  const primero = document.getElementById("primero");
 
-if (texto ==="") {
-  error.textContent = "El campo está vacío.";
-  error.classList.remove("d-none");
-  return;
-}
+  if (texto === "") {
+    error.textContent = "El campo está vacío.";
+    error.classList.remove("d-none");
+    return;
+  }
 
-if (primero === null){
-  error.textContent = "No hay ningún párrafo que modificar.";
-  return;
-}
+  primero.textContent = texto;
 
-primero.textConten = texto;
+  error.classList.add("d-none");
 
-error.classList.add("d-none");
-console.log("Texto del primer párrafo actualizado.");
+  console.log("Texto del primer párrafo actualizado.");
 }
 
 function cambiarConHtml() {
   const entrada = document.querySelector("#nuevoTexto");
   const texto = entrada.value.trim();
-  const error = document.querySelector("#error");
-  const primero = document.querySelector("#contenido p");
+  const error = document.querySelector("#error4");
+  const primero = document.getElementById("primero");
 
-  if (texto ==="") {
-    error.textContent ="El campo está vacío.";
+  if (texto === "") {
+    error.textContent = "El campo está vacío.";
     error.classList.remove("d-none");
     return;
   }
@@ -127,6 +124,7 @@ function cambiarConHtml() {
 
   console.log("Primer párrafo actualizado utilizando innerHTML.");
 }
+
 
 function actualizarTotalTareas() {
   const tareas = document.querySelectorAll("#listaTareas li");
