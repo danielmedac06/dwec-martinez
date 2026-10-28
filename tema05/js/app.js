@@ -171,6 +171,17 @@ casilla.addEventListener("change", function () {
   );
 });
 
+elemento.append(casilla, contenido);
+lista.append(elemento);
+
+entrada.value = "";
+error.textContent = "";
+error.classList.add("d-none");
+
+actualizarTotalTareas();
+entrada.focus();
+
+console.log("Tarea añadida:", texto);
 }
 
 function borrarCompletadas() {
