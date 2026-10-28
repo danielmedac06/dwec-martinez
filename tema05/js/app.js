@@ -194,13 +194,22 @@ function borrarCompletadas() {
     error.textContent = "No hay tareas completadas para borrar.";
     error.classList.remove("d-none");
 
+    console.log("No hay tareas completadas.");
+    return;
   }
 
+  for (const casilla of casillas) {
+    casilla.parentElement.remove();
+  }
 
-}
+  error.textContent = "";
+  error.classList.add("d-none");
 
+  actualizarTotalTareas();
 
+  console.log(`Se han borrado ${casillas.length} tarea(s) completada(s).`);
 
+  }
 
 function verDatosVentana() {
 
