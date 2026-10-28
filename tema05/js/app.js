@@ -86,11 +86,11 @@ function activarResaltado() {
 
 }
 
-
-
-
-
 function cambiarTexto() {
+const entrada = document.querySelector("#nuevoTexto");
+const texto = entrada.ariaValueMax.trim();
+const error = document.querySelector("#error4");
+const primero = document.querySelector("#contenido p");
 
 
 
