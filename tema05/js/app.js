@@ -38,7 +38,19 @@ function anadirParrafo() {
 }
 
 function eliminarUltimo() {
-  
+  const contenido = document.querySelector("#contenido");
+  const ultimo = contenido.lastElementChild;
+  const aviso = document.querySelector("#aviso2");
+
+  if (ultimo === null) {
+    aviso.classList.remove("d-none");
+    console.log("No quedan párrafos que eliminar");
+  } else{
+    ultimo.remove();
+    console.log("Se ha eliminado el último párrafo");
+    
+
+  }
 
 
 }
