@@ -25,7 +25,15 @@ function aplicarCambios() {
 function anadirParrafo() {
   const contenido = document.querySelector("#contenido");
   const parrafo = document.createElement("p");
+  const numero = contenido.querySelectorAll("p").length+1;
 
+  parrafo.textContent = `Parrafo nuevo ${numero}`;
+
+  contenido.append(parrafo);
+
+  document.querySelector("#aviso2").classList.add("d-none");
+
+  console.log("Parrafo añadido:", parrafo.textContent);
 
 }
 
