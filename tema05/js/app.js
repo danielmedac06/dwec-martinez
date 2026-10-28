@@ -155,6 +155,9 @@ casilla.type = "checkbox";
 casilla.classList.add("form-check-input", "me-2");
 casilla.setAttribute("aria-label", `Completar tarea: ${texto}`);
 
+const contenido = document.createElement("span");
+contenido.textContent = texto;
+
 }
 
 function borrarCompletadas() {
