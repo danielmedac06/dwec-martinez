@@ -182,9 +182,7 @@ console.log("Tarea añadida:", texto);
 }
 
 function borrarCompletadas() {
-  const casillas = document.querySelectorAll(
-    "#listaTareas input:checked"
-  );
+  const tareas = document.querySelectorAll("#listaTareas li");
   const error = document.querySelector("#error5");
 
   if (casillas.length === 0) {
