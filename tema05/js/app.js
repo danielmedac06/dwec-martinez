@@ -135,9 +135,17 @@ function actualizarTotalTareas() {
 
 
 function anadirTarea() {
+const entrada = document.querySelector("#tareaInput");
+const texto = entrada.value.trim();
+const error = document.querySelector("#error5");
+const lista = document.querySelector("listaTareas");
 
-
-
+if (texto === ""){
+  error.textContent = "Escribe una tarea antes de añadirla.";
+  error.classList.remove("d-none");
+  entrada.focus();
+  return;
+}
 
 }
 
