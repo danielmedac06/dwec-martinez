@@ -1,63 +1,67 @@
 # Tarea 5 · Manipular el DOM
 
-**Autor:** [Tu nombre y apellidos] · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
+**Autor:** Daniel Martinez Ferreras  
+**Módulo:** Desarrollo Web en Entorno Cliente (DWEC)  
+**Curso:** 2.º DAW · 2026-2027
 
-> **Plantilla de la tarea 5.** Cómo usarla:
->
-> 1. Copia esta carpeta en tu repositorio de DWEC y cámbiale el nombre a `tema05`.
-> 2. `index.html` ya está maquetado: es la página que vas a manipular. No cambies los `id` ni las clases que usa el JavaScript.
-> 3. `js/app.js` trae una función por botón con `TODO`, y modelos en los ejercicios 1, 3 y 6.
-> 4. Sustituye las imágenes de `capturas/` por las tuyas, **con el mismo nombre**.
-> 5. Todo lo que va entre [corchetes] es un hueco: cámbialo por lo tuyo. Al terminar, borra este aviso.
+## Descripción
 
-[Una o dos líneas: qué hay en esta carpeta y cómo se ve. Por ejemplo: abrir la carpeta en VS Code, pulsar **Go Live** y probar los botones con la consola abierta (F12).]
+En esta tarea he trabajado con JavaScript para manipular el DOM de una página web. He utilizado selectores para acceder a los elementos HTML, he cambiado textos y clases de Bootstrap, he creado y eliminado párrafos y he añadido eventos para resaltar el contenido al pasar el ratón. También he creado una lista de tareas interactiva y he consultado información de la ventana y del navegador mediante el BOM.
+
+Para probar la página, abro `index.html` en el navegador, por ejemplo, mediante Live Server desde Visual Studio Code. La lógica de los botones se encuentra en `js/app.js`.
 
 ## Capturas
 
-### a) La página recién cargada
+### a) Página recién cargada
 
-<img src="capturas/a-pagina.png" alt="La página recién cargada con mi nombre en la navbar" width="600">
+![Página inicial](capturas/a-pagina.png)
 
-[Qué se ve: tu nombre y los tres párrafos de partida.]
+Se muestra la página inicial «Manipular el DOM», con mi nombre en la barra superior y los tres párrafos de ejemplo.
 
-### b) Ejercicios 1 y 2
+### b) Ejercicios 1 y 2: selectores y creación de párrafos
 
-<img src="capturas/b-ej1-ej2.png" alt="Los párrafos después de aplicar los cambios y añadir dos párrafos" width="600">
+![Ejercicios 1 y 2](capturas/b-ej1-ej2.png)
 
-[Qué ha cambiado en cada párrafo y qué selector has usado para cada uno.]
+En el ejercicio 1 he cambiado el texto del primer párrafo, resaltado el segundo con `bg-warning-subtle` y puesto el tercero en rojo con `text-danger`. En el ejercicio 2 he probado a añadir y eliminar párrafos utilizando `createElement()`, `append()` y `remove()`.
 
 ### c) Ejercicio 3: resaltado al pasar el ratón
 
-![Un párrafo resaltado con el ratón encima](capturas/c-ej3-resaltado.png)
+![Resaltado al pasar el ratón](capturas/c-ej3-resaltado.png)
 
-[Qué párrafo está resaltado y qué pasa con los párrafos que añades después.]
+He utilizado los eventos `mouseenter` y `mouseleave` para añadir y quitar la clase `bg-body-secondary` cuando el ratón entra y sale de un párrafo. Los párrafos creados después no tienen estos eventos asignados, por lo que hay que volver a pulsar «Activar resaltado».
 
-### d) Ejercicio 4: `<b>hola</b>` con innerHTML
+### d) Ejercicio 4: diferencia entre `textContent` e `innerHTML`
 
-<img src="capturas/d-ej4-innerhtml.png" alt="El primer párrafo tras usar innerHTML" width="600">
+![Prueba con innerHTML](capturas/d-ej4-innerhtml.png)
 
-[Qué salía con «Cambiar texto» y qué sale con innerHTML.]
+He probado a escribir `<b>hola</b>` en el campo de texto. Con `textContent`, las etiquetas se muestran como texto; con `innerHTML`, el navegador interpreta las etiquetas y muestra «hola» en negrita.
 
-### e) Ejercicio 5: la lista de tareas
+### e) Ejercicio 5: lista de tareas
 
-![La lista con tres tareas y una marcada](capturas/e-ej5-lista.png)
+![Lista de tareas](capturas/e-ej5-lista.png)
 
-[Tres tareas, una marcada, antes de pulsar «Borrar completadas».]
+He añadido tres tareas y he marcado una como completada. Las tareas se crean mediante elementos HTML y el contador se actualiza al añadirlas o borrarlas. El botón «Borrar completadas» elimina las tareas marcadas.
 
-### f) Ejercicio 6: los datos de la ventana en el móvil
+### f) Ejercicio 6: datos de la ventana en modo móvil
 
-<img src="capturas/f-ej6-movil.png" alt="Los datos de la ventana en el modo móvil" width="300">
+![Datos de la ventana en modo móvil](capturas/f-ej6-movil.png)
 
-[Qué punto de corte sale en el móvil y cuál en tu ordenador.]
+He consultado el tamaño de la ventana, el punto de corte de Bootstrap, el tamaño de la pantalla, la URL y el idioma del navegador. He probado la página en el modo dispositivo de las herramientas de desarrollo del navegador.
 
 ## Reflexión
 
-[De 5 a 8 líneas: ¿qué diferencia hay entre textContent e innerHTML y por qué no se debe meter en innerHTML lo que escribe el usuario? Pon como ejemplo lo que pasó con `<b>hola</b>`.]
+La propiedad `textContent` permite introducir texto sin interpretar las etiquetas HTML. En cambio, `innerHTML` interpreta el contenido como HTML y permite mostrar elementos como el texto en negrita. Por ejemplo, al introducir `<b>hola</b>`, con `textContent` se ven las etiquetas, mientras que con `innerHTML` aparece «hola» en negrita. No es recomendable introducir directamente en `innerHTML` contenido escrito por los usuarios, porque podría contener código HTML malicioso. Para mostrar texto introducido por el usuario de forma segura, es preferible utilizar `textContent`.
 
 ## Fuentes
 
-- [Título de la página](https://enlace-a-la-fuente)
+- Material de clase: **Tema 5. Los objetos de lenguaje — Tarea 5. Manipular el DOM**.
+- [MDN: Document.querySelector()](https://developer.mozilla.org/es/docs/Web/API/Document/querySelector)
+- [MDN: Node.textContent](https://developer.mozilla.org/es/docs/Web/API/Node/textContent)
+- [MDN: Element.innerHTML](https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML)
+- [MDN: EventTarget.addEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)
+- [Bootstrap 5.3: Documentación](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 
 ## Uso de IA
+He usado la IA para entender algunos conceptos de las tareas del app.js y poder correguir algunos errores que he tenido en la actividad 4 y 5.
+La IA me ha ayudado ha hacer el README.md. He usado de IA de apoyo (ChatGPT).
 
-[Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
