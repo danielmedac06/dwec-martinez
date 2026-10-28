@@ -241,4 +241,3 @@ function verDatosVentana() {
 
   console.log("Se han mostrado los datos de la ventana.");
   }
-
