@@ -4,8 +4,13 @@ function aplicarCambios() {
   const primero = document.getElementById("primero");
   primero.textContent = "Texto modificado por JavaScript";
   const segundo = document.querySelector("#contenido p");
-  
+  const parrafos = document.querySelectorAll("#contenido .segundo");
 
+  if (primero!== null){
+    primero.textContent = "Texto modificado por JavaScript";
+  }
+
+  
 }
 
 
