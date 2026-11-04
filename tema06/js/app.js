@@ -216,10 +216,28 @@ function filtrarCaros() {
 }
 
 function buscarProducto() {
-  // TODO: lee #buscarProducto (value, trim y toLowerCase). Si está vacío, avisa en #mensaje3.
-  // TODO: con find(), el primer producto cuyo nombre en minúsculas contenga ese texto (includes).
-  // TODO: find devuelve undefined si no encuentra nada: en ese caso, dilo en #mensaje3 y vacía la tabla.
-  //       Si lo encuentra, píntalo solo a él: pintarProductos([encontrado]).
+  const texto = document.querySelector("#buscarProducto").value.trim().toLowerCase();
+  const mensaje = document.querySelector("#mensaje3");
+
+  if(texto === "") {
+    mensaje.textContent = "Escribe el nombre del producto.";
+    pintarProductos([]);
+    return;
+  }
+
+  const encontrado = productos.find(function (producto){
+    return producto.nombre.toLowerCase().incluses(texto);
+  });
+
+  if (encontrado === undefined) {
+    mensaje.textContent = "No se ha encontrado ningun producto.";
+    pintarProductos([]);
+    console.log("Ejercicio 3: producto no encontrado");
+  } else {
+    pintarProductos([encontrado]);
+    mensaje.textContent = "Producto encontrado.";
+    console.log("Ejercico 3: producto encontrado, encontrado");
+  }
 }
 
 mostrarProductos();   // la tabla completa nada más cargar
