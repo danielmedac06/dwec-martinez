@@ -344,12 +344,19 @@ mostrarNotas();
 const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function verDobles() {
-  // TODO: con map(), un array nuevo con el doble de cada número.
-  // TODO: escribe en #salida5 el resultado y, debajo, numeros (para que se vea que no ha cambiado).
+  const dobles = numeros.map(function (numero){
+    return numero * 2;
+  });
+
+  const salida = document.querySelector("#salida5");
+  salida.style.whiteSpace = "pre-line";
+
+  salida.textContent = "Dobles: " + comoTexto(dobles) + "\nArray original: " + comoTexto(numeros);
+  console.log("Ejercicio 5: dobles", dobles);
 }
 
 function verPares() {
-  // TODO: con filter(), los números pares (n % 2 === 0). Escríbelos en #salida5 como en verDobles().
+  
 }
 
 function verSuma() {
