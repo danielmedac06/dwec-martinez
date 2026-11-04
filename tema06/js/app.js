@@ -327,7 +327,11 @@ function anadirNota() {
 }
 
 function borrarNotas() {
-  // TODO: deja alumno.notas vacío y vuelve a pintar.
+  alumno.notas = [];
+
+  mostrarNotas();
+
+  console.log("Ejercicio 4: notas borradas");
 }
 
 mostrarNotas();
