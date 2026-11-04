@@ -390,7 +390,7 @@ function verCadena() {
   });
 
   const suma = dobles.reduce(function (total, numero) {
-    return toal + numero;
+    return total + numero;
   }, 0);
 
   const salida = document.querySelector("#Salida5");
