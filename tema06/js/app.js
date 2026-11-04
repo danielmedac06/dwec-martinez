@@ -88,6 +88,8 @@ function mostrarColores() {
   });
 
   document.querySelector("#totalColores").textContent = colores.length;
+
+  console.log("Ejercicio 2: mostrar colores", comoTexto(colores));
 }
 
 function avisar2(mensaje) {
@@ -113,8 +115,16 @@ function anadirColor() {
 }
 
 function quitarUltimo() {
-  // TODO: si la lista está vacía, avisa con avisar2() y no hagas nada más.
-  // TODO: si no, saca el último con pop(), vuelve a pintar la lista y di en la consola qué color ha salido.
+  if (colores.length === 0) {
+    avisar2("No hay colores para quitar.");
+    return;
+  }
+
+  const eliminado = colores.pop();
+  
+  mostrarColores();
+
+  console.log("Ejercicio2: color eliminado con pop()", eliminado);
 }
 
 function quitarPrimero() {
