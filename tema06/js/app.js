@@ -402,7 +402,6 @@ function verCadena() {
   console.log("Ejercicio 5: los tres pasos", pares, dobles, suma);
 }
 
-
 // ============================================================
 // Ejercicio 6 · Ciudades
 // ============================================================
@@ -411,8 +410,19 @@ const ciudadesOriginal = ["Granada", "Sevilla", "Málaga", "Córdoba", "Jaén", 
 let ciudades = [...ciudadesOriginal];   // una copia: splice cambia ciudades y así podemos restaurarla
 
 function mostrarCiudades() {
-  // TODO: vacía #ciudades y pon un badge por ciudad con su posición: «0 · Granada», «1 · Sevilla»...
-  //       Pista: forEach le pasa a tu función dos datos: function (ciudad, posicion) { ... }.
+  const salida = document.querySelector("#ciudades");
+  salida.textContent = "";
+
+  ciudades.forEach(function (ciudad, posicion){
+    const badge = document.createElement("span");
+
+    badge.classList.add("badge", "text-bg-primary", "me-1", "mb-1");
+    badge.textContent = posicion + " . " + ciudad;
+
+    salida.appened(badge);
+  });
+  
+  console.log("Ejercicio 6: ciudades", ciudades);
 }
 
 function verSlice() {
