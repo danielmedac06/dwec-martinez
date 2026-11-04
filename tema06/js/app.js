@@ -53,7 +53,11 @@ function verFicha() {
 }
 
 function cumplirAnios() {
-  // TODO: suma 1 a la edad del estudiante y vuelve a pintar la ficha (llama a verFicha()).
+  estudiante.edad = estudiante.edad +1;
+
+  console.log("Ejercicio 1: nueva edad", estudiante.edad);
+
+  verFicha();
 }
 
 function quitarCurso() {
