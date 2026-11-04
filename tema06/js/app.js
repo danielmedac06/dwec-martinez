@@ -382,8 +382,24 @@ console.log("Ejercicio 5: suma", suma);
 }
 
 function verCadena() {
-  // TODO: los tres seguidos: los pares, después sus dobles y al final la suma de esos dobles.
-  //       Escribe en #salida5 una línea por paso.
+  const pares = numeros.filter(function (numero) {
+    return numero % 2 === 0;
+  });
+
+  const dobles = pares.map(function (numero) {
+    return numero * 2;
+  });
+
+  const suma = dobles.reduce(function (total, numero) {
+    return toal + numero;
+  }, 0);
+
+  const salida = document.querySelector("#Salida5");
+  salida.whiteSpace = "pre-line";
+
+  salida.textContent =  "1. Números pares: " + comoTexto(pares) + "\n2. Dobles de los pares: " + comoTexto(dobles) + "\n3. Suma de los dobles: " + suma;
+
+  console.log("Ejercicio 5: los tres pasos", pares, dobles, suma);
 }
 
 
