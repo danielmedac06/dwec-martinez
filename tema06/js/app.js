@@ -418,7 +418,7 @@ function mostrarCiudades() {
     badge.classList.add("badge", "text-bg-primary", "me-1", "mb-1");
     badge.textContent = posicion + " . " + ciudad;
 
-    salida.appened(badge);
+    salida.append(badge);
   });
   
   console.log("Ejercicio 6: ciudades", ciudades);
