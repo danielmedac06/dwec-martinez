@@ -369,7 +369,16 @@ function verPares() {
 }
 
 function verSuma() {
-  // TODO: con reduce(), la suma de todos los números (empieza en 0). Escríbela en #salida5.
+  const suma = numeros.reduce(function (total, numero){
+    return total + numero;
+  }, 0);
+
+const salida = document.querySelector("#saluda5");
+salida.style.whiteSpace = "pre-line";
+
+salida.textContent = "Suma de los números: " + suma + "\nArray original: " + comoTexto(numeros);
+
+console.log("Ejercicio 5: suma", suma);
 }
 
 function verCadena() {
