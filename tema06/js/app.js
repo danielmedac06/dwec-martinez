@@ -183,7 +183,11 @@ function pintarProductos(lista) {
 }
 
 function mostrarProductos() {
-  // TODO: pinta todos los productos con pintarProductos() y escribe en #mensaje3 cuántos hay.
+  pintarProductos(productos);
+
+  document.querySelector("#mensaje3").textContent = "Hay " + productos.length + " productos en el catalogo.";
+
+  console.log("Ejercicio 3: todos los productos");
 }
 
 function ordenarPorPrecio() {
