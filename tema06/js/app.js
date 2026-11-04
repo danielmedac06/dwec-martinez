@@ -466,8 +466,22 @@ function restaurarCiudades() {
 }
 
 function buscarCiudad() {
-  // TODO: lee #buscarCiudad (value y trim). Si está vacío, avisa.
-  // TODO: escribe en #salida6 lo que dan includes() e indexOf() con ese nombre. Si no está, indexOf da -1.
+  const nombre = document.querySelector("#buscarCiudad").value.trim();
+  const salida = document.querySelector("#salida6");
+
+  if (nombre === "") {
+    salida.textContent = "Escribe el nombre de una ciudad.";
+    return;
+  }
+
+  const existe = ciudades.includes(nombre);
+  const posicion = ciudades.indexOf(nombre);
+
+  salida.style.whiteSpace = "pre-line";
+
+  salida.textContent =  "Ciudad buscada: " + nombre +"\nincludes(): " + existe + "\nindexOf(): " + posicion;
+
+  console.log("Ejercicio 6: busqueda", nombre, existe, posicion);
 }
 
 mostrarCiudades();
