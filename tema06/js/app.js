@@ -356,7 +356,16 @@ function verDobles() {
 }
 
 function verPares() {
-  
+  const pares = numeros.filter(function (numero){
+    return numero % 2 === 0;
+  });
+
+  const salida = document.querySelector("#salida5");
+  salida.style.whiteSpace = "pre-line";
+
+  salida.textContent= "Números pares: " + comoTexto(pares) + "\nArray original: " + comoTexto(numeros);
+
+  console.log("Ejercicio 5: pares", pares);
 }
 
 function verSuma() {
