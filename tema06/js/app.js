@@ -426,7 +426,14 @@ function mostrarCiudades() {
 }
 
 function verSlice() {
-  // TODO: guarda ciudades.slice(2, 5) y escribe en #salida6 qué devuelve y cuántas ciudades siguen en el array.
+  const parte = ciudades.slice(2, 5);
+
+  const salida = document.querySelector("#salida6");
+  salida.style.whiteSpace = "pre-line";
+
+  salida.textContent =  "Resultado de slice(2, 5): " + comoTexto(parte) + "\nCiudades que siguen en el array: " + ciudades.length;
+
+  console.log("Ejercicio 6: slice", parte);
 }
 
 function hacerSplice() {
