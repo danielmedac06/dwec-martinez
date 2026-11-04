@@ -61,8 +61,11 @@ function cumplirAnios() {
 }
 
 function quitarCurso() {
-  // TODO: borra la propiedad curso con delete y vuelve a pintar la ficha.
-  //       Fíjate en lo que sale ahora en el curso y explícalo en el README.
+  delete estudiante.curso;
+
+  console.log("Ejercicio 1: curso eliminado");
+
+  verFicha();
 }
 
 
