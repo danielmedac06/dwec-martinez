@@ -205,7 +205,14 @@ function ordenarPorPrecio() {
 }
 
 function filtrarCaros() {
+  const caros = productos.filter(function (producto){
+    return producto.precio > 50;
+  });
 
+  pintarProductos(caros);
+
+  document.querySelector("#mensaje3").textContent = "Hay " + caros.length + " productos de mas de 50 €.";
+   console.log("Ejercicio 3: productos de mas de 50 €, caros");
 }
 
 function buscarProducto() {
