@@ -456,7 +456,13 @@ function hacerSplice() {
 }
 
 function restaurarCiudades() {
-  
+  ciudades = [...ciudadesOriginal];
+
+  mostrarCiudades();
+
+  document.querySelector("#salida6").textContent = "Las ciudades se han restaurado correctamnete.";
+
+  console.log("Ejercicio 6: ciudades restaurades", ciudades);
 }
 
 function buscarCiudad() {
