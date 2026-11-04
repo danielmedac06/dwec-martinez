@@ -196,10 +196,16 @@ function ordenarPorPrecio() {
   copia.sort(function (a, b) {
     return a.precio - b.precio;
   });
+
+  pintarProductos(copia);
+
+  document.querySelector("#mensaje3").textContent = "Productos ordenados de menor a mayor precio.";
+
+  console.log("Ejercicio 3 productos ordenado", copia);
 }
 
 function filtrarCaros() {
-  // TODO: con filter(), los productos de más de 50 €. Píntalos y escribe en #mensaje3 cuántos son.
+
 }
 
 function buscarProducto() {
