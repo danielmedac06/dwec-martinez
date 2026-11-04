@@ -128,7 +128,16 @@ function quitarUltimo() {
 }
 
 function quitarPrimero() {
-  // TODO: lo mismo que quitarUltimo(), pero sacando el primero con shift().
+  if (colores.length === 0) {
+    avisar2("No hgahy colores para quitar.");
+    return;
+  }
+
+  const eliminado = colores.shift();
+
+  mostrarColores();
+
+  console.log("Ejercicio 2: color eliminado con shift()", eliminado);
 }
 
 mostrarColores();   // pinta los tres colores de partida nada más cargar
