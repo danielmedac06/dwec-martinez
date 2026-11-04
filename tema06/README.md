@@ -1,64 +1,87 @@
 # Tarea 6 · Objetos y arrays
 
-**Autor:** [Tu nombre y apellidos] · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
+**Autor:** Daniel Martínez Ferreras · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
 
-> **Plantilla de la tarea 6.** Cómo usarla:
->
-> 1. Copia esta carpeta en tu repositorio de DWEC y cámbiale el nombre a `tema06`.
-> 2. `index.html` ya está maquetado: seis tarjetas, una por ejercicio. No cambies los `id` ni el `onclick` de los botones.
-> 3. `js/app.js` trae una función por botón con `TODO`. Ya están hechas `comoTexto()`, `pintarProductos()` y casi todo el ejercicio 2: úsalas de modelo.
-> 4. Todas las funciones con `function`: en esta tarea, sin funciones flecha.
-> 5. Sustituye las imágenes de `capturas/` por las tuyas, **con el mismo nombre**.
-> 6. Todo lo que va entre [corchetes] es un hueco: cámbialo por lo tuyo. Al terminar, borra este aviso.
+## Descripción
 
-[Una o dos líneas: qué hay en esta carpeta y cómo se ve. Por ejemplo: abrir la carpeta en VS Code, pulsar **Go Live** y probar los botones con la consola abierta (F12).]
+En esta carpeta está realizada la Tarea 6 sobre objetos y arrays de JavaScript.
+
+Para ver la página hay que abrir el proyecto en Visual Studio Code y utilizar Live Server o Go Live para abrir el archivo `index.html`. La página tiene seis ejercicios con diferentes botones para probar las funciones. También se puede abrir la consola del navegador pulsando F12 para ver los resultados.
 
 ## Capturas
 
 ### a) La página recién cargada
 
-<img src="capturas/a-pagina.png" alt="La página recién cargada con mi nombre en la navbar" width="600">
+<img src="capturas/a-pagina.png" alt="Página principal de la práctica" width="600">
 
-[Qué se ve nada más cargar: tu nombre, los colores, la tabla de productos y las ciudades.]
+En esta captura se puede ver la página principal con mi nombre, las seis tarjetas de ejercicios, la lista inicial de colores, el catálogo de productos y las ciudades.
 
 ### b) Ejercicios 1 y 2: la ficha y los colores
 
-<img src="capturas/b-ej1-ej2.png" alt="La ficha de estudiante y la lista de colores" width="600">
+<img src="capturas/b-ej1-ej2.png" alt="Ficha de estudiante y lista de colores" width="600">
 
-[La ficha después de cumplir años y la lista de colores después de añadir y quitar alguno. Qué método has usado para cada cosa.]
+En el ejercicio 1 he creado un objeto estudiante con cuatro propiedades: nombre, apellidos, edad y curso. También tiene un método llamado `presentarse()`. He añadido botones para mostrar la ficha, cumplir años y quitar el curso.
+
+En el ejercicio 2 he trabajado con una lista de colores. He utilizado `push()` para añadir colores, `pop()` para quitar el último y `shift()` para quitar el primero.
 
 ### c) Ejercicio 3: el catálogo ordenado por precio
 
-![La tabla de productos ordenada por precio](capturas/c-ej3-ordenado.png)
+<img src="capturas/c-ej3-ordenado.png" alt="Catálogo de productos ordenado por precio" width="600">
 
-[Cómo es tu función de comparación y por qué ordenas una copia.]
+En este ejercicio he creado un catálogo con seis productos. Cada producto tiene nombre, precio y categoría.
+
+He utilizado `sort()` para ordenar los productos de menor a mayor precio. También he utilizado `filter()` para mostrar los productos de más de 50 € y `find()` para buscar un producto por su nombre.
+
+He utilizado una copia del array para ordenar los productos sin modificar la lista original.
 
 ### d) Ejercicio 4: las notas y la media
 
-![Las notas con su color y la media](capturas/d-ej4-notas.png)
+<img src="capturas/d-ej4-notas.png" alt="Notas del alumno y media" width="600">
 
-[Cinco notas como mínimo, aprobadas y suspensas, con su media.]
+En este ejercicio he creado un objeto alumno para guardar las notas. Se pueden añadir notas entre 0 y 10 y también borrarlas.
+
+Las notas aprobadas aparecen en verde y las suspensas en rojo. He utilizado `reduce()` para calcular la media de todas las notas.
 
 ### e) Ejercicio 5: los tres métodos seguidos
 
-![El resultado de filter, map y reduce encadenados](capturas/e-ej5-cadena.png)
+<img src="capturas/e-ej5-cadena.png" alt="Resultado de filter, map y reduce" width="600">
 
-[Qué hace cada paso y qué número sale al final.]
+En este ejercicio he trabajado con los números del 1 al 10.
+
+Primero he utilizado `filter()` para seleccionar los números pares. Después he utilizado `map()` para multiplicarlos por dos. Por último, he utilizado `reduce()` para sumar todos los resultados.
+
+El resultado final es **60**.
 
 ### f) Ejercicio 6: después de splice y de buscar una ciudad
 
-![Las ciudades después de splice y una búsqueda](capturas/f-ej6-splice.png)
+<img src="capturas/f-ej6-splice.png" alt="Lista de ciudades después de utilizar splice" width="600">
 
-[Qué ciudades ha quitado splice, en qué posición ha quedado la que has buscado y por qué.]
+En este ejercicio he creado una lista con ocho ciudades de Andalucía.
+
+He utilizado `slice(2, 5)` para obtener una parte de la lista sin modificarla. También he utilizado `splice(2, 2)` para eliminar dos ciudades, que son Málaga y Córdoba.
+
+Para buscar una ciudad he utilizado `includes()` y `indexOf()`. Así puedo comprobar si existe y saber en qué posición se encuentra.
 
 ## Reflexión
 
-[De 5 a 8 líneas: ¿qué métodos de los que has usado cambian el array original y cuáles devuelven uno nuevo? Pon como ejemplo lo que pasa en el ejercicio 6 con slice y con splice, y explica por qué en el ejercicio 3 ordenas una copia.]
+En esta práctica he aprendido a trabajar con objetos y arrays utilizando diferentes métodos de JavaScript.
+
+He aprendido que algunos métodos modifican el array original, como `push()`, `pop()`, `shift()`, `splice()` y `sort()`. Otros métodos, como `map()`, `filter()` y `slice()`, devuelven un resultado nuevo sin modificar el array original.
+
+En el ejercicio 6 he podido comprobar la diferencia entre `slice()` y `splice()`. El primero obtiene una parte de la lista y el segundo elimina elementos.
+
+En el ejercicio 3 he utilizado una copia de los productos para ordenarlos y mantener la lista original.
+
+También he aprendido a buscar elementos, calcular medias y mostrar resultados en la página.
 
 ## Fuentes
 
-- [Título de la página](https://enlace-a-la-fuente)
+- Apuntes del Tema 6 de Desarrollo Web en Entorno Cliente.
+- MDN Web Docs: JavaScript. https://developer.mozilla.org/es/docs/Web/JavaScript
+- W3Schools: JavaScript Array Methods. https://www.w3schools.com/js/js_array_methods.asp
 
 ## Uso de IA
 
-[Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
+He utilizado ChatGPT como ayuda para resolver dudas sobre JavaScript, revisar el código y corregir algunos errores que aparecieron durante la práctica.
+
+Después he revisado los códigos y he probado los botones en el navegador para comprobar que los ejercicios funcionan correctamente.
