@@ -394,7 +394,8 @@ function verCadena() {
   }, 0);
 
   const salida = document.querySelector("#Salida5");
-  salida.whiteSpace = "pre-line";
+
+  salida.style.whiteSpace = "pre-line";
 
   salida.textContent =  "1. Números pares: " + comoTexto(pares) + "\n2. Dobles de los pares: " + comoTexto(dobles) + "\n3. Suma de los dobles: " + suma;
 
