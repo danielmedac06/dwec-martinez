@@ -43,17 +43,16 @@ function verFicha() {
 
   const presentacion = document.createElement("p");
   presentacion.classList.add("mt-3");
-  presentacion.textContent = estudiante.PRESENTARSE();
+  presentacion.textContent = estudiante.presentarse();
 
   salida.append(lista, presentacion);
 
   console.log("Ejercicio 1: nueva edad", estudiante.edad);
 
-  verFicha();
 }
 
 function cumplirAnios() {
-  estudiante.edad = estudiante.edad +1;
+  estudiante.edad += 1;
 
   console.log("Ejercicio 1: nueva edad", estudiante.edad);
 
