@@ -437,12 +437,26 @@ function verSlice() {
 }
 
 function hacerSplice() {
-  // TODO: si quedan menos de 3 ciudades, avisa en #salida6 de que hay que restaurar y no hagas nada más.
-  // TODO: si no, ciudades.splice(2, 2): escribe en #salida6 qué devuelve y cuántas quedan, y vuelve a pintar.
+  const salida = document.querySelector("#salida6");
+
+  if (ciudades.length < 3) {
+    salida.textContent = "Quedan menos de tres ciudades. Pulsa Restaurar.";
+    return;
+  }
+
+  const eliminadas = ciudades.splice(2, 2);
+
+  salida.style.whiteSpace = "pre-line";
+
+  salida.textContent = "Ciudades eliminadas con splice(2, 2): " + comoTexto(eliminadas) + "\nCiudades que quedan: " + ciudades.length;
+  
+  mostrarCiudades();
+
+  console.log("Ejercicio 6: ciudades eliminades", eliminadas);
 }
 
 function restaurarCiudades() {
-  // TODO: vuelve a copiar ciudadesOriginal en ciudades y pinta.
+  
 }
 
 function buscarCiudad() {
