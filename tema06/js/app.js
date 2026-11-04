@@ -178,6 +178,8 @@ function pintarProductos(lista) {
     fila.append(nombre, categoria, precio);
     cuerpo.append(fila);
   });
+
+  console.log("Ejercicio 3: productos pintados", lista);
 }
 
 function mostrarProductos() {
