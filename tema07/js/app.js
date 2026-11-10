@@ -499,10 +499,14 @@ function iniciales(nombreCompleto) {
 }
 
 function crearUsuario(nombreCompleto) {
+  console.log("crearUsuario:", nombreCompleto);
 
+  const letras = iniciales(nombreCompleto).toLowerCase();
+  const cifras = Math.floor(Math.random() * 1000).toString().padStart(3, "0");
+
+  return letras + cifras;
 }
 
 function mostrarIniciales() {
-  // TODO: lee #nombre6. Si está vacío, avisa en #salida6b.
-  // TODO: si no, escribe en #salida6b «Iniciales: LMO · usuario: lmo042».
+  
 }
