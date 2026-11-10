@@ -419,6 +419,21 @@ function crearAlumno() {
 
 let alumno;
 
+if (empresa === "") {
+  alumno = new Alumno(nombre, curso);
+} else {
+  alumno = new AlumnoFCT(nombre, curso, empresa);
+}
+
+notas.forEach((nota) => alumno.anadirNota(nota));
+
+alumnos.push(alumno);
+error.classList.add("d-none");
+
+document.querySelector("#nombre5").value = "";
+document.querySelector("#empresa5").value = "";
+document.querySelector("#notas5").value = "";
+}
 
 pintarAlumnos();
 
