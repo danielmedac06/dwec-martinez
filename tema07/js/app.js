@@ -541,8 +541,8 @@ function mostrarIniciales() {
   }
   
   const letras = iniciales(nombre);
-  const ususario = crearUsuario(nombre);
+  const usuario = crearUsuario(nombre);
 
   salida.textContent = `Iniciales: ${letras} · usuario: ${usuario}`;
-  console.log("Ejercicio 6: Iniciales y Usuario ", letras, usuario);
+  console.log("Ejercicio 6: Iniciales y Usuario", letras, usuario);
 }
