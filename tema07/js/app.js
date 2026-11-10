@@ -333,6 +333,10 @@ alumnoInicial.anadirNota(8);
 alumnoInicial.anadirNota(9);
 alumnos.push(alumnoInicial);
 
+const alumnoFCTInicial = new AlumnoFCT("Sara Gil", "2.º DAW", "TecnoSur");
+alumnoFCTInicial.anadirNota(7);
+alumnoFCTInicial.anadirNota(8.5);
+alumnos.push(alumnoFCTInicial);
 
 function pintarAlumnos() {
   const contenedor = document.querySelector("#listaAlumnos");
