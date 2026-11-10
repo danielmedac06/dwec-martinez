@@ -190,7 +190,7 @@ function transformar(lista, operacion) {
     resultado.push(operacion(elemento));
   }
 
-  return resultados;
+  return resultado;
 }
 
 function mostrar3(nombre, resultado, conMap) {
