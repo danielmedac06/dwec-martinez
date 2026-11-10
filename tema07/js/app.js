@@ -508,5 +508,19 @@ function crearUsuario(nombreCompleto) {
 }
 
 function mostrarIniciales() {
+  console.log("crearUsuario:", nombreCompleto);
+
+  const nombre = document.querySelector("#nombre6").value.trim();
+  const salida = document.querySelector("#salida6b");
+
+  if (nombre === "") {
+    salida.textContent = "Escribe un nombre completo.";
+    return;
+  }
   
+  const letras = iniciales(nombre);
+  const ususario = crearUsuario(nombre);
+
+  salida.textContent = `Iniciales: ${letras} · usuario: ${usuario}`;
+  console.log("Ejercicio 6: Iniciales y Usuario ", letras, usuario);
 }
