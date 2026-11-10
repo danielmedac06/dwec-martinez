@@ -328,12 +328,12 @@ class AlumnoFCT extends Alumno {
 
 const alumnos = [];
 
-const alumnoInicial = new Alumno("Lucia Martin", "2º DAW");
+const alumnoInicial = new Alumno("Justo Cenit", "2º DAW");
 alumnoInicial.anadirNota(8);
 alumnoInicial.anadirNota(9);
 alumnos.push(alumnoInicial);
 
-const alumnoFCTInicial = new AlumnoFCT("Sara Gil", "2.º DAW", "TecnoSur");
+const alumnoFCTInicial = new AlumnoFCT("Daniel Martinez", "2.º DAW", "TecnoSur");
 alumnoFCTInicial.anadirNota(7);
 alumnoFCTInicial.anadirNota(8.5);
 alumnos.push(alumnoFCTInicial);
