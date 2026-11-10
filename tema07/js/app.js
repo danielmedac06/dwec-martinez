@@ -339,6 +339,8 @@ alumnoFCTInicial.anadirNota(8.5);
 alumnos.push(alumnoFCTInicial);
 
 function pintarAlumnos() {
+  console.log("pintarAlumnos");
+
   const contenedor = document.querySelector("#listaAlumnos");
   contenedor.textContent = "";
 
@@ -355,6 +357,7 @@ function pintarAlumnos() {
 
     const media = document.createElement("span");
     media.classList.add("badge", "me-1");
+    
     if (alumno.notas.length === 0) {
       media.classList.add("text-bg-secondary");
       media.textContent = "Sin notas";
