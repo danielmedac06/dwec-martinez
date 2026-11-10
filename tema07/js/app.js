@@ -513,9 +513,9 @@ function iniciales(nombreCompleto) {
 
   return nombreCompleto
   .trim()
-  .split("")
-  .filter((palabra) => palabra !== "")
-  .map((palabra) => palabra[0].toUpperCase())
+  .split(/\s+/)
+  .filter((palabra) => palabra.length > 0)
+  .map((palabra)  => palabra[0].toUpperCase())  
   .join("");
 
 }
