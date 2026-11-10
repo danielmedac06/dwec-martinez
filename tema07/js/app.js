@@ -1,5 +1,5 @@
 /*
-  Tarea 7 · DWEC · [Tu nombre y apellidos]
+  Tarea 7 · DWEC · DANIEL MARTINEZ FERRERAS
   Funciones, flechas y clases.
 
   Cómo usar esta plantilla:
@@ -37,17 +37,16 @@ function pintarLista(selector, textos) {
 // ============================================================
 // Ejercicio 1 · Precio final
 // ============================================================
-
-// TODO: calcularPrecio(base, iva, descuento) devuelve el precio final con return. No lee ni pinta nada.
-//       iva vale 21 por defecto y descuento, 0 por defecto (parámetros por defecto).
-//       Primero se resta el descuento (un tanto por ciento de la base) y después se suma el IVA.
-//       Comprueba en la consola: calcularPrecio(100) tiene que dar 121.
 function calcularPrecio(base, iva, descuento) {
+  console.log("calcularPrecio:", base, iva, descuento);
 
+  const precioConDescuento = base - (base * descuento / 100);
+  return precioConDescuento + (precioConDescuento * iva / 100);
 }
 
 // Ya está hecha: 74.8 → "74.80 €"
 function formatearEuros(cantidad) {
+  console.log("formatearEuros:", cantidad);
   return cantidad.toFixed(2) + " €";
 }
 
