@@ -453,7 +453,9 @@ function diasHasta(fecha) {
 }
 
 function mostrarDias() {
-  const valor = document.querySelector("#fecha6").value;        // "2026-12-25", o "" si está vacía
+  console.log("mostrarDias");
+
+  const valor = document.querySelector("#fecha6").value;
   const salida = document.querySelector("#salida6a");
 
   if (valor === "") {
@@ -461,23 +463,41 @@ function mostrarDias() {
     return;
   }
 
-  // Ya está hecho: de "2026-12-25" a un Date. Fíjate en el mes - 1: el mes va de 0 a 11
   const [anio, mes, dia] = valor.split("-").map(Number);
   const fecha = new Date(anio, mes - 1, dia);
+  const dias = diasHasta(fecha);
 
-  // TODO: con diasHasta(fecha), escribe en #salida6a «Faltan N días: será viernes, 25 de diciembre de 2026.»,
-  //       «Es hoy…» o «Fue hace N días…». El nombre de la fecha, con toLocaleDateString("es-ES", {…}).
+  const fechaTexto = fecha.toLocaleDateString("es-ES",{
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+
+   if (dias > 0) {
+    salida.textContent = `Faltan ${dias} días: será ${fechaTexto}.`;
+  } else if (dias === 0) {
+    salida.textContent = `Es hoy: ${fechaTexto}.`;
+  } else {
+    salida.textContent = `Fue hace ${Math.abs(dias)} días: ${fechaTexto}.`;
+  }
+
+  console.log("Ejercicio 6: días hasta la fecha →", dias);
+ 
 }
 
-// TODO: iniciales(nombreCompleto) devuelve las iniciales en mayúsculas: «lucía martín ortega» → «LMO».
-//       Encadena trim, split(" "), filter (para quitar las palabras vacías si hay espacios dobles),
-//       map (la primera letra de cada palabra, en mayúscula) y join("").
 function iniciales(nombreCompleto) {
+  console.log("iniciales:", nombreCompleto);
+
+  return nombreCompleto
+  .trim()
+  .split("")
+  .filter((palabra) => palabra !== "")
+  .map((palabra) => palabra[0].toUpperCase())
+  .join("");
 
 }
 
-// TODO: crearUsuario(nombreCompleto) devuelve las iniciales en minúsculas y tres cifras al azar, de 000 a 999:
-//       «lmo042». Pista: Math.random, Math.floor y padStart(3, "0").
 function crearUsuario(nombreCompleto) {
 
 }
