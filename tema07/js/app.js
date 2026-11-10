@@ -441,11 +441,14 @@ pintarAlumnos();
 // ============================================================
 // Ejercicio 6 · Fechas y textos
 // ============================================================
-
-// TODO: diasHasta(fecha) devuelve cuántos días faltan desde hoy hasta fecha (negativo si ya pasó).
-//       Pon hoy a medianoche (hoy.setHours(0, 0, 0, 0)), resta las fechas, divide entre los milisegundos
-//       de un día y redondea con Math.round: con el cambio de hora, la resta no siempre da un número entero.
 function diasHasta(fecha) {
+  console.log("diasHasta:", fecha);
+
+  const hoy = new Date();
+  hoy.setHours(0, 0, 0, 0);
+
+  const milisegundosDia = 24 * 60 * 60 * 1000;
+  return Math.round((fecha - hoy) / milisegundosDia);
 
 }
 
