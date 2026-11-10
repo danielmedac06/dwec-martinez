@@ -284,10 +284,15 @@ class Alumno {
     this.notas = [];
   }
 
-  añadirNota(nota) {
-    console.log("añadirNota:", nota);
+  anadirNota(nota) {
+    console.log("anadirNota:", nota);
 
-    if (typeof nota !== "number" || Number.isNaN(nota) || nota < 0 || nota > 10) {
+    if (
+      typeof nota !== "number" ||
+      Number.isNaN(nota) ||
+      nota < 0 ||
+      nota > 10
+    ) {
       return false;
     }
 
@@ -298,19 +303,22 @@ class Alumno {
   media() {
     console.log("media:", this.nombre);
 
-    if (this.notas-length === 0 ) {
+    if (this.notas.length === 0) {
       return 0;
     }
 
-    const suma = this.notas.reduce((total, notal) => total + nota, 0);
-    return suma / this.nota.length;
+    const suma = this.notas.reduce(
+      (total, nota) => total + nota,
+      0
+    );
+
+    return suma / this.notas.length;
   }
 
   presentarse() {
     console.log("presentarse:", this.nombre);
     return `${this.nombre}, de ${this.curso}`;
   }
- 
 }
 
 class AlumnoFCT extends Alumno {
@@ -321,7 +329,7 @@ class AlumnoFCT extends Alumno {
   }
 
   presentarse() {
-    console.log("presentarse (FCT):", this.nombe);
+    console.log("presentarse (FCT):", this.nombre);
     return `${super.presentarse()}, en prácticas en ${this.empresa}`;
   }
 }
@@ -333,7 +341,11 @@ alumnoInicial.anadirNota(8);
 alumnoInicial.anadirNota(9);
 alumnos.push(alumnoInicial);
 
-const alumnoFCTInicial = new AlumnoFCT("Daniel Martinez", "2.º DAW", "TecnoSur");
+const alumnoFCTInicial = new AlumnoFCT(
+  "Daniel Martinez",
+  "2.º DAW",
+  "TecnoSur"
+);
 alumnoFCTInicial.anadirNota(7);
 alumnoFCTInicial.anadirNota(8.5);
 alumnos.push(alumnoFCTInicial);
@@ -362,7 +374,12 @@ function pintarAlumnos() {
       media.classList.add("text-bg-secondary");
       media.textContent = "Sin notas";
     } else {
-      media.classList.add(alumno.media() >= 5 ? "text-bg-success" : "text-bg-danger");
+      media.classList.add(
+        alumno.media() >= 5
+          ? "text-bg-success"
+          : "text-bg-danger"
+      );
+
       media.textContent = `Media ${alumno.media().toFixed(2)}`;
     }
 
@@ -401,9 +418,10 @@ function crearAlumno() {
 
   if (notasTexto !== "") {
     const partesNotas = notasTexto.split(",");
+
     notas = partesNotas.map((texto) => Number(texto.trim()));
 
-     const hayNotaNoValida = partesNotas.some((texto, indice) =>
+    const hayNotaNoValida = partesNotas.some((texto, indice) =>
       texto.trim() === "" ||
       Number.isNaN(notas[indice]) ||
       notas[indice] < 0 ||
@@ -411,28 +429,32 @@ function crearAlumno() {
     );
 
     if (hayNotaNoValida) {
-      error.textContent = "Las notas deben ser números entre 0 y 10, separados por comas.";
+      error.textContent =
+        "Las notas deben ser números entre 0 y 10, separados por comas.";
       error.classList.remove("d-none");
       return;
+    }
   }
-}
 
-let alumno;
+  let alumno;
 
-if (empresa === "") {
-  alumno = new Alumno(nombre, curso);
-} else {
-  alumno = new AlumnoFCT(nombre, curso, empresa);
-}
+  if (empresa === "") {
+    alumno = new Alumno(nombre, curso);
+  } else {
+    alumno = new AlumnoFCT(nombre, curso, empresa);
+  }
 
-notas.forEach((nota) => alumno.anadirNota(nota));
+  notas.forEach((nota) => alumno.anadirNota(nota));
 
-alumnos.push(alumno);
-error.classList.add("d-none");
+  alumnos.push(alumno);
 
-document.querySelector("#nombre5").value = "";
-document.querySelector("#empresa5").value = "";
-document.querySelector("#notas5").value = "";
+  error.classList.add("d-none");
+
+  document.querySelector("#nombre5").value = "";
+  document.querySelector("#empresa5").value = "";
+  document.querySelector("#notas5").value = "";
+
+  pintarAlumnos();
 }
 
 pintarAlumnos();
