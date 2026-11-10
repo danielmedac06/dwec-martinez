@@ -530,7 +530,7 @@ function crearUsuario(nombreCompleto) {
 }
 
 function mostrarIniciales() {
-  console.log("crearUsuario:", nombreCompleto);
+  console.log("mostrarIniciales");
 
   const nombre = document.querySelector("#nombre6").value.trim();
   const salida = document.querySelector("#salida6b");
