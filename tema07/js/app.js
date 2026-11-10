@@ -314,16 +314,26 @@ class Alumno {
 }
 
 class AlumnoFCT extends Alumno {
-  // TODO: constructor(nombre, curso, empresa): primero super(nombre, curso) y después guarda la empresa.
-  // TODO: presentarse(): la frase de Alumno (super.presentarse()) más «, en prácticas en TecnoSur».
+  constructor(nombre, curso, empresa) {
+    super(nombre, curso);
+    this.empresa = empresa;
+    console.log("AlumnoFCT creado:", nombre, empresa);
+  }
+
+  presentarse() {
+    console.log("presentarse (FCT):", this.nombe);
+    return `${super.presentarse()}, en prácticas en ${this.empresa}`;
+  }
 }
 
 const alumnos = [];
 
-// TODO: cuando tengas las clases, crea aquí dos alumnos de partida y añádelos a alumnos con push:
-//       un Alumno con dos notas y un AlumnoFCT con otras dos.
+const alumnoInicial = new Alumno("Lucia Martin", "2º DAW");
+alumnoInicial.anadirNota(8);
+alumnoInicial.anadirNota(9);
+alumnos.push(alumnoInicial);
 
-// Ya está hecha: pinta una tarjeta por alumno en #listaAlumnos y actualiza #totalAlumnos
+
 function pintarAlumnos() {
   const contenedor = document.querySelector("#listaAlumnos");
   contenedor.textContent = "";
