@@ -385,10 +385,10 @@ function pintarAlumnos() {
 function crearAlumno() {
   console.log("crearAlumno");
 
-  const nombre = document. querySelector("#nombre5").value.trim();
+  const nombre = document.querySelector("#nombre5").value.trim();
   const curso = document.querySelector("#curso5").value;
   const empresa = document.querySelector("#empresa5").value.trim();
-  const notasTexto = document.querySelector("#notas5").valuetrim();
+  const notasTexto = document.querySelector("#notas5").value.trim();
   const error = document.querySelector("#error5");
 
   if (nombre === "") {
