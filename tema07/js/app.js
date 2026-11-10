@@ -51,12 +51,50 @@ function formatearEuros(cantidad) {
 }
 
 function mostrarPrecio() {
-  // TODO: lee #base, #iva y #descuento (value). El IVA conviértelo con Number().
-  // TODO: si la base está vacía o es negativa, error en #error1 (quítale "d-none") y no sigas.
-  // TODO: si el descuento está vacío, llama a calcularPrecio(base, iva), sin el tercer argumento, para que se
-  //       use el valor por defecto. Si no, comprueba que está entre 0 y 100 y pásaselo.
-  // TODO: oculta el error y pinta el desglose en #salida1 con pintarLista():
-  //       «Precio sin IVA: …», «Descuento: … %», «IVA: … %» y «Precio final: …» (con formatearEuros).
+  console.log("mostrarPrecio");
+
+  const baseTexto = document.querySelector("#base").value;
+  const iva = Number(document.querySelector("#iva").value);
+  const descuentoTexto = document.querySelector("#descuento").value;
+  const error = document.querySelector("#error1");
+
+  if (baseTexto === "" || Number.isNaN(Number(baseTexto)) || Number(baseTexto) < 0) {
+    error.textContent = "Introduce un precio base válido (igual o mayor que 0).";
+    error.classList.remove("d-none");
+    document.querySelector("#salida1").textContent = "";
+    return;
+    }
+
+  const base = Number(baseTexto);
+  let precioFinal;
+  let descuento = 0;
+
+  if (descuentoTexto === "") {
+    precioFinal = calcularPrecio(base, iva);
+  } else {
+    descuento = Number(descuentoTexto);
+
+    if (Number.isNaN(descuento) || descuento < 0 || descuento > 100) {
+      error.textContent = "El descuento debe estar entre 0 y 100.";
+      error.classList.remove("d-none");
+      document.querySelector("#salida1").textContent = "";
+      return;
+    }
+
+    precioFinal = calcularPrecio(base, iva, descuento);
+  }
+
+  error.classList.add("d-none");
+
+  const textos = [
+    `Precio sin IVA: ${formatearEuros(base)}`,
+    `Descuento: ${descuento} %`,
+    `IVA: ${iva} %`,
+    `Precio final: ${formatearEuros(precioFinal)}`
+  ];
+
+  pintarLista("#salida1", textos);
+  console.log("Ejercicio 1: precio final →", precioFinal);
 }
 
 
