@@ -213,18 +213,27 @@ function mostrar3(nombre, resultado, conMap) {
   });
 }
 function verDobles() {
+  console.log("verDobles");
+
   const resultado = transformar(numeros, (n) => n * 2);
   mostrar3("dobles", resultado, numeros.map((n) => n * 2));
   console.log("Ejercicio 3: dobles →", resultado);
 }
 
 function verCuadrados() {
-  // TODO: como verDobles(), con el cuadrado de cada número (n ** 2).
+  console.log("verCuadrados");
+
+  const resultado = transformar(numeros, (n) => n * 2);
+  mostrar3("dobles", resultado, numeros.map((n) => n * 2));
+  console.log("Ejercicio 3: dobles ", resultado);
 }
 
 function verAbsolutos() {
-  // TODO: como verDobles(), con el valor absoluto (Math.abs). Pista: Math.abs ya es una función,
-  //       así que se puede pasar tal cual, sin paréntesis.
+  console.log("verAbsolutos");
+
+  const resultado = transformar(numeros, Math.abs);
+  mostrar3("valores absolutos", resultado, numeros.map(Map.abs));
+  console.log("Ejercicio 3: valores absolutos ", resultado);
 }
 
 
