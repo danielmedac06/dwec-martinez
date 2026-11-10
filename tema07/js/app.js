@@ -181,22 +181,30 @@ function buscarAntigua() {
 const numeros = [3, -1, 4, -1, 5, 9];
 document.querySelector("#numeros3").textContent = `const numeros = [${numeros.join(", ")}];`;
 
-// TODO: transformar(lista, operacion) hace a mano lo que hace map, sin usar map:
-//       recorre lista con for…of, llama a operacion con cada elemento, guarda lo que devuelve
-//       en un array nuevo y, al final, devuelve ese array.
 function transformar(lista, operacion) {
+  console.log("transformar:", lista);
 
+  const resultado = [];
+
+  for (const elemento of lista) {
+    resultado.push(operacion(elemento));
+  }
+
+  return resultados;
 }
 
-// Ya está hecha: escribe en #salida3 tu resultado, el de map y numeros
 function mostrar3(nombre, resultado, conMap) {
+  console.log("mostrar3:", nombre, resultado);
+
   const salida = document.querySelector("#salida3");
   salida.textContent = "";
+
   const lineas = [
     `${nombre} → [${resultado.join(", ")}]`,
     `con map → [${conMap.join(", ")}]`,
     `numeros → [${numeros.join(", ")}] (no cambia)`
   ];
+
   lineas.forEach((linea) => {
     const p = document.createElement("p");
     p.classList.add("mb-1");
@@ -204,8 +212,6 @@ function mostrar3(nombre, resultado, conMap) {
     salida.append(p);
   });
 }
-
-// El modelo: funcionará cuando hayas escrito transformar()
 function verDobles() {
   const resultado = transformar(numeros, (n) => n * 2);
   mostrar3("dobles", resultado, numeros.map((n) => n * 2));
