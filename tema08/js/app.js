@@ -306,3 +306,11 @@ verResumen.addEventListener("click", () => {
     cantidad++;
 
   }
+
+  avisoResumen.textContent =  `Hay ${cantidad} datos en el formulario. «Repite el correo» no aparece porque no tiene atributo name.`;
+
+  console.log("Resume:" , datos);
+
+});
+
+console.log("Formulario preparado");
