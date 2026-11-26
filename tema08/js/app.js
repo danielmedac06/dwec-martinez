@@ -245,6 +245,26 @@ form.querySelectorAll("input, select, textarea").forEach((campo) => {
 
 });
 
+form.addEventListener("reset", () => {
+
+  setTimeout(() => {
+
+    const campos = form.querySelectorAll("input, select textarea");
+
+    campos.forEach((campo) => {
+      quitarError(campo);
+    });
+
+    email2.setCustomValidity("");
+    contador.textContent = "0";
+
+    valorNivel.textContent = "5";
+
+    console.log("Formulario reiniciado");
+
+  }, 0 );
+});
+
 
 
 // ============================================================
