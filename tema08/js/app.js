@@ -24,12 +24,23 @@ const form = document.querySelector("#inscripcion");
 
 // Ya está hecha: es el modelo
 function mostrarError(campo, mensaje) {
-  campo.classList.add("is-invalid");                         // borde rojo de Bootstrap
+  campo.classList.add("is-invalid");     
+
+  if (campo.type === "radio") {
+    const radios = form.querySelectorAll(`[name="${campo.name}"]`);
+
+    radios.forEach((radio) => {
+      radio.classList.add("is-invalid");
+    });
+  
   const aviso = campo.closest(".mb-3").querySelector(".invalid-feedback");
   aviso.textContent = mensaje;
-  aviso.classList.add("d-block");                            // visible también en los radio
-}
+  aviso.classList.add("d-block");     
 
+} else {
+  const aviso= campo.parentElement.querySelector(".invalid-feedback");
+  }
+}
 function quitarError(campo) {
   // TODO: lo contrario de mostrarError(): quita "is-invalid" al campo, vacía su .invalid-feedback
   //       y quítale "d-block".
