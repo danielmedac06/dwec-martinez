@@ -39,6 +39,9 @@ function mostrarError(campo, mensaje) {
 
 } else {
   const aviso= campo.parentElement.querySelector(".invalid-feedback");
+
+  aviso.textContent = mensaje;
+  aviso.classList.add("d-block");
   }
 }
 function quitarError(campo) {
