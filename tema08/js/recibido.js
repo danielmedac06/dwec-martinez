@@ -39,3 +39,19 @@ for (const [campo, valor] of parametros) {
   console.log("Campo:", campo, "Valor:", valor);
 
 }
+if (parametros.size === 0) {
+
+  const fila = document.createElement("tr");
+
+  const celda = document.createElement("td");
+
+  celda.colSpan = 2;
+  celda.textContent = "No se han recibido datos.";
+
+  fila.append(celda);
+
+  datos.append(fila);
+
+  console.log("No se han recibido datos.");
+
+}
