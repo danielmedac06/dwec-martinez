@@ -55,3 +55,6 @@ if (parametros.size === 0) {
   console.log("No se han recibido datos.");
 
 }
+
+console.log("Lectura de parametros finalizada");
+
