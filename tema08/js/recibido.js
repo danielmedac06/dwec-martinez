@@ -19,3 +19,23 @@ if (location.search === "") {
 } else {
   consulta.textContent = location.search;
 }
+
+const datos = document.querySelector("#datos");
+
+for (const [campo, valor] of parametros) {
+
+  const fila = document.createElement("tr");
+
+  const nombreCampo = document.createElement("th");
+  const valorCampo = document.createElement("td");
+
+  nombreCampo.textContent = campo;
+  valorCampo.textContent = valor;
+
+  fila.append(nombreCampo, valorCampo);
+
+  datos.append(fila);
+
+  console.log("Campo:", campo, "Valor:", valor);
+
+}
