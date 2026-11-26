@@ -45,10 +45,27 @@ function mostrarError(campo, mensaje) {
   }
 }
 function quitarError(campo) {
-  // TODO: lo contrario de mostrarError(): quita "is-invalid" al campo, vacía su .invalid-feedback
-  //       y quítale "d-block".
-  //       Ojo con los radio: el error es de todo el grupo. Si campo.type es "radio", quita "is-invalid"
-  //       a todos los de su grupo: form.querySelectorAll(`[name="${campo.name}"]`).
+  
+  if (campo.type === "radio") {
+    const radios = form.querySelectorAll(`[name="${campo.name}"]`);
+
+    radios.forEach((radio) => {
+      radio.classList.remove("is-invalid");
+    });
+    const aviso = document.querySelector("#errorTaller");
+    aviso.textContent = "";
+    aviso.classList.remove("d-block");
+
+  } else {
+    campo.classList.remove("is-invalid");
+
+    const aviso = campo.parentElement.querySelector(".invalid-feedback");
+
+    if (aviso !== null) {
+      aviso.textContent = "";
+      aviso.classList.remove("d-block");
+    }
+  }
 }
 
 
