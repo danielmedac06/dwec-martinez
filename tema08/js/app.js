@@ -206,6 +206,46 @@ function comprobarCorreos() {
 
 }
 
+email.addEventListener("input", () => {
+  comprobarCorreos();
+
+  if (email2.classList.contains("is-ivalid") && email2.checkValidity()) {
+    quitarError(email2);
+  }
+});
+
+email2.addEventListener("input", () => {
+
+  comprobarCorreos();
+
+  if (email2.checkValidity()) {
+    quitarError(email2);
+  }
+
+});
+
+
+form.querySelectorAll("input, select, textarea").forEach((campo) => {
+
+  campo.addEventListener("input", () => {
+
+    if (campo.checkValidity()) {
+      quitarError(campo);
+    }
+
+  });
+
+  campo.addEventListener("change", () => {
+
+    if (campo.checkValidity()) {
+      quitarError(campo);
+    }
+
+  });
+
+});
+
+
 
 // ============================================================
 // Ejercicio 6 · Resumen con FormData
