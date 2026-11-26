@@ -271,8 +271,38 @@ form.addEventListener("reset", () => {
 // Ejercicio 6 · Resumen con FormData
 // ============================================================
 
-// TODO: con el evento "click" de #verResumen:
-//       · const datos = new FormData(form);
-//       · recórrelo con for (const [campo, valor] of datos) y pinta un <li class="list-group-item"> por par
-//         en #resumen (createElement y textContent; si el valor está vacío, «(vacío)»);
-//       · escribe en #avisoResumen cuántos datos hay y por qué falta «Repite el correo».
+const verResumen = document.querySelector("#verResumen");
+const tablaResumen = document.querySelector("#tablaResumen");
+const avisoResumen = document.querySelector("#avisoResumen");
+
+
+verResumen.addEventListener("click", () => {
+
+  const datos = new FormData(form);
+
+  tablaResumen.textContent = "";
+
+  let cantidad = 0;
+
+  for (const [campo, valor] of datos) {
+
+    const fila = document.createElement("tr");
+
+    const nombreCampo = document.createElement("th");
+    const valorCampo = document.createElement("td");
+
+    nombreCampo.textContent = campo;
+
+    if (valor === "") {
+      valorCampo.textContent = "(vacío)";
+    } else {
+      valorCampo.textContent = valor;
+    }
+
+    fila.append(nombreCampo, valorCampo);
+
+    tablaResumen.append(fila);
+
+    cantidad++;
+
+  }
