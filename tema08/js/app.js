@@ -120,13 +120,50 @@ function mensajeDe(campo) {
 // ============================================================
 
 form.addEventListener("submit", (e) => {
-  // TODO 1: e.preventDefault(), para que no se envíe todavía.
-  // TODO 2: coge todos los campos: e.target.querySelectorAll("input, select, textarea").
-  // TODO 3: recórrelos con forEach. Si campo.checkValidity() es true, quitarError(campo);
-  //         si no, mostrarError(campo, mensajeDe(campo)) y apúntate el primero que falla.
-  // TODO 4: si alguno ha fallado, pon el foco en el primero (focus()) y no sigas (return).
-  // TODO 5: si todo está bien, envíalo de verdad: e.target.submit().
+  
+  e.preventDefault();
+
+  comprobarCorreos();
+
+  const campos = e.target.querySelectorAll("input, select, textarea");
+
+  let primerError = null;
+
+  const radiosComprobados = [];
+
+  campos.forEach((campo) => {
+    if (campo.type === "radio") {
+      if (radiosComprobados.includes(campo.name)){
+        return;
+      }
+
+      radiosComprobados.push(campo.name);
+    }
+
+    if (campo.checkValidity()) {
+      quitarError(campo);
+    } else {
+
+      mostrarError(campo, mensajeDe(campo));
+
+      if (primerError === null) {
+        primerError = campo;
+
+      }
+    }
+  });
+  if (primerError !== null) {
+
+    primerError.focus();
+    return;
+
+  }
+
+  e.target.submit();
+
 });
+
+
 
 
 // ============================================================
